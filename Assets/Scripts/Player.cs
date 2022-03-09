@@ -5,13 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //https://www.youtube.com/watch?v=b8YUfee_pzc
-    //00:37:18
+    //00:43:11
 
     private BoxCollider2D m_boxCollider;
     private Vector3 m_moveDelta;
+
     private float m_moveHorizontal;
     private float m_moveVertical;
-
+    
     private void Start()
     {
         m_boxCollider = GetComponent<BoxCollider2D>();
