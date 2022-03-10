@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     private float m_moveHorizontal;
     private float m_moveVertical;
+    private float m_speedFactor = 0.72f;
     
     private void Start()
     {
@@ -46,14 +47,14 @@ public class Player : MonoBehaviour
         if (m_hit.collider == null)
         {
             //Make this thing move
-            transform.Translate(0, m_moveDelta.y * Time.fixedDeltaTime, 0);
+            transform.Translate(0, m_moveDelta.y * Time.fixedDeltaTime * m_speedFactor, 0);
         }
 
         m_hit = Physics2D.BoxCast(transform.position, m_boxCollider.size, 0, new Vector2(m_moveDelta.x, 0), Mathf.Abs(m_moveDelta.x * Time.deltaTime), LayerMask.GetMask("Characters", "Blocking"));
         if (m_hit.collider == null)
         {
             //Make this thing move
-            transform.Translate(m_moveDelta.x * Time.fixedDeltaTime, 0, 0);
+            transform.Translate(m_moveDelta.x * Time.fixedDeltaTime * m_speedFactor, 0, 0);
         }
 
     }
