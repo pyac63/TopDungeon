@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraMotor : MonoBehaviour
 {
     public Transform m_lookAt;
-    public float m_boundX = 0.15f;
-    public float m_boundY = 0.05f;
+    private float m_boundX = 0.25f;
+    private float m_boundY = 0.15f;
 
     private void LateUpdate()
     {
