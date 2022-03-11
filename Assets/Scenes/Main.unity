@@ -1941,6 +1941,7 @@ GameObject:
   - component: {fileID: 1035008011}
   - component: {fileID: 1035008010}
   - component: {fileID: 1035008009}
+  - component: {fileID: 1035008012}
   m_Layer: 7
   m_Name: TEST_NPC
   m_TagString: Untagged
@@ -2039,6 +2040,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035008012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035008008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a149d00f7da464d9048014ceb07b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!1 &1297973797
 GameObject:
   m_ObjectHideFlags: 0
