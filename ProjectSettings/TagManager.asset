@@ -47,3 +47,6 @@ TagManager:
   - name: Characters
     uniqueID: 2619524599
     locked: 0
+  - name: Interactible
+    uniqueID: 839689047
+    locked: 0
