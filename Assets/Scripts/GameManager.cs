@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+    //https://www.youtube.com/watch?v=b8YUfee_pzc
+    //02:30:20
+
+
+
     public static GameManager m_instance;
 
     private void Awake()
