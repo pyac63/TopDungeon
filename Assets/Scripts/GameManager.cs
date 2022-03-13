@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     //https://www.youtube.com/watch?v=b8YUfee_pzc
-    //02:30:20
+    //03:11:11
 
 
 
@@ -35,10 +35,18 @@ public class GameManager : MonoBehaviour
     //References
     public Player player;
     // public Weapon weapon;
+    public FloatingTextManager m_floatingTextManager;
 
     //Logic
     public int m_pesos;
     public int m_experience;
+
+
+    public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    {
+        m_floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
+
 
     public void SaveState()
     {
@@ -51,7 +59,6 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetString("SaveState", s);
     }
-
     public void LoadState(Scene s, LoadSceneMode mode)
     {
 
