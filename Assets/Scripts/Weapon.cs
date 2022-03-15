@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Weapon : Collidable
+{
+    // Damage structure
+    public int m_damagePoint = 1;
+    public float m_pushForce = 2.0f;
+
+    // Upgrade structure
+    public int m_weaponLevel = 0;
+    private SpriteRenderer m_weaponSprite;
+
+    // Swing structure
+    private float m_cooldown = 0.5f;
+
+
+    protected override void Start()
+    {
+        base.Start();
+        m_weaponSprite = GetComponent<SpriteRenderer>();
+    }
+
+
+}

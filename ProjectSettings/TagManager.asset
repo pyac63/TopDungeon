@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Blocking
   - Characters
-  - 
+  - Weapon
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Interactible
     uniqueID: 839689047
+    locked: 0
+  - name: Weapon
+    uniqueID: 3916729045
     locked: 0
