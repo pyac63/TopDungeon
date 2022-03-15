@@ -14,6 +14,7 @@ public class Weapon : Collidable
 
     // Swing structure
     private float m_cooldown = 0.5f;
+    private float m_lastSwing;
 
 
     protected override void Start()
@@ -21,6 +22,40 @@ public class Weapon : Collidable
         base.Start();
         m_weaponSprite = GetComponent<SpriteRenderer>();
     }
+
+    protected override void Update()
+    {
+        base.Update();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.time - m_lastSwing > m_cooldown)
+            {
+                m_lastSwing = Time.time;
+                Swing();
+            }
+        }
+
+    }
+
+    protected override void OnCollide(Collider2D collider)
+    {
+        if (collider.tag =="Fighter")
+        {
+            if (collider.name =="Player")
+            {
+                return;
+            }
+            Debug.Log(collider.name);
+        }        
+    }
+
+    private void Swing()
+    {
+        Debug.Log("Swing!");
+    }
+
+
+
 
 
 }
