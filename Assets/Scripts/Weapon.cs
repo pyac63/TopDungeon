@@ -45,6 +45,12 @@ public class Weapon : Collidable
             {
                 return;
             }
+
+            //Create a new damage object, then send it to the fighter hit
+            Damage dmg = new Damage { m_damageAmount = m_damagePoint, m_origin = transform.position, m_damagePushForce = m_pushForce };
+
+            collider.SendMessage("ReceiveDamage", dmg);
+
             Debug.Log(collider.name);
         }        
     }

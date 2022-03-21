@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Fighter
 {
     private BoxCollider2D m_boxCollider;
     private Vector3 m_moveDelta;
