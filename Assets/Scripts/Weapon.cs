@@ -39,7 +39,7 @@ public class Weapon : Collidable
 
     protected override void OnCollide(Collider2D collider)
     {
-        if (collider.tag =="Fighter")
+        if (collider.CompareTag("Fighter"))
         {
             if (collider.name =="Player")
             {
