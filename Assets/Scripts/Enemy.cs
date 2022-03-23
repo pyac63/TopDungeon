@@ -16,7 +16,8 @@ public class Enemy : Mover
     private Transform m_playerTransform;
     private Vector3 m_startingPosition;
 
-    //Enemy weapon hitbox
+    //Enemy hitbox
+    public ContactFilter2D m_filter;
     private BoxCollider2D m_hitbox;
     private Collider2D[] m_hits = new Collider2D[10];
 
@@ -54,6 +55,30 @@ public class Enemy : Mover
         }
 
         //Check for collider overlap
+        m_hitbox.OverlapCollider(m_filter, m_hits);
+        for (int i = 0; i < m_hits.Length; i++)
+        {
+            if (m_hits[i] == null)
+            {
+                continue;
+            }
+
+            if (m_hits[i].CompareTag("Fighter") && m_hits[i].name == "Player")
+            {
+                m_collidingWithPlayer = true;
+            }
+
+            //Cleaning array
+            m_hits[i] = null;
+
+        }
+    }
+
+    protected override void Death()
+    {
+        Destroy(gameObject);
+        GameManager.m_instance.m_experience += m_xpValue;
+        GameManager.m_instance.ShowText("+ " + m_xpValue + " XP", 25, Color.green, transform.position, Vector3.up * 40, 1.0f); 
     }
 
 }
