@@ -25,6 +25,35 @@ public class Enemy : Mover
         base.Start();
         m_playerTransform = GameManager.m_instance.player.transform;
         m_startingPosition = transform.position;
+        m_hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        //Is the player in range
+        if (Vector3.Distance(m_playerTransform.position, m_startingPosition) < m_chaseLenght)
+        {
+            m_isChasing = Vector3.Distance(m_playerTransform.position, m_startingPosition) < m_triggerLength;
+
+            if (m_isChasing)
+            {
+                if (!m_collidingWithPlayer)
+                {
+                    UpdateMotor((m_playerTransform.position - transform.position).normalized);
+                }
+            }
+            else
+            {
+                UpdateMotor(m_startingPosition - transform.position);
+            }
+        }
+        else
+        {
+            UpdateMotor(m_startingPosition - transform.position);
+            m_isChasing = false;
+        }
+
+        //Check for collider overlap
     }
 
 }
