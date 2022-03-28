@@ -276,6 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312612422}
   - component: {fileID: 312612423}
+  - component: {fileID: 312612424}
   m_Layer: 7
   m_Name: hitbox
   m_TagString: Untagged
@@ -323,6 +324,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09983072, y: 0.13994355}
   m_EdgeRadius: 0
+--- !u!114 &312612424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312612421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803dc6baebeb6ae47a0bb39bf99ce97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  m_damageEnemyHitbox: 3
+  m_pushForceEnemyHitbox: 4
 --- !u!1 &353671919
 GameObject:
   m_ObjectHideFlags: 0
@@ -14007,6 +14036,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7066182227219486979, guid: 4c664c9148315eb45951b0c63601054a, type: 3}
+      propertyPath: m_pushRecoverySpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7066182227219486981, guid: 4c664c9148315eb45951b0c63601054a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -14054,6 +14087,10 @@ PrefabInstance:
     - target: {fileID: 7066182227219486983, guid: 4c664c9148315eb45951b0c63601054a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066182228630443133, guid: 4c664c9148315eb45951b0c63601054a, type: 3}
+      propertyPath: m_pushForce
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c664c9148315eb45951b0c63601054a, type: 3}
