@@ -52,5 +52,19 @@ public class CharacterMenu : MonoBehaviour
     }
 
     //Update the character informations
+    public void UpdateMenu()
+    {
+        //Weapon
+        m_WeaponSprite.sprite = GameManager.m_instance.m_weaponSprites[0];
+        m_upgradeCostText.text = "NOT IMPLEMENTED YET";
 
+        //Meta
+        m_levelText.text = "NOT IMPLEMENTED YET";
+        m_hitpointText.text = GameManager.m_instance.player.m_hitPoint.ToString();
+        m_pesosText.text = GameManager.m_instance.m_pesos.ToString();
+
+        //Xp Bar
+        m_xpText.text = "NOT IMPLEMENTED YET";
+        m_xpBar.localScale = new Vector3(0.5f, 0f, 0f);
+    }
 }
