@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         //change skin pref
         m_pesos = int.Parse(data[1]);
         m_experience = int.Parse(data[2]);
-        //change weapon level
+        m_weapon.SetWeaponLevel(int.Parse(data[3]));
 
 
         Debug.Log("Load State");

@@ -57,7 +57,7 @@ public class CharacterMenu : MonoBehaviour
     {
         //Weapon
         m_WeaponSprite.sprite = GameManager.m_instance.m_weaponSprites[GameManager.m_instance.m_weapon.m_weaponLevel];
-        m_upgradeCostText.text = GameManager.m_instance.m_weaponPrices[GameManager.m_instance.m_weapon.m_weaponLevel.ToString()];
+        m_upgradeCostText.text = GameManager.m_instance.m_weaponPrices[GameManager.m_instance.m_weapon.m_weaponLevel].ToString();
 
         //Meta
         m_levelText.text = "NOT IMPLEMENTED YET";
