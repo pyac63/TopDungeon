@@ -34,11 +34,11 @@ public class GameManager : MonoBehaviour
 
     //References
     public Player player;
-    // public Weapon weapon;
+    public Weapon m_weapon;
     public FloatingTextManager m_floatingTextManager;
 
     //Logic
-    public int m_pesos;
+    public int m_pesos = 0;
     public int m_experience;
 
 
@@ -47,15 +47,40 @@ public class GameManager : MonoBehaviour
         m_floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 
+    //Upgrade Weapon
+    public bool TryUpgradeWeapon()
+    {
+        // is the weapon max level?
+        if (m_weaponPrices.Count <= m_weapon.m_weaponLevel)
+            return false;
+
+        if (m_pesos >= m_weaponPrices[m_weapon.m_weaponLevel])
+        {
+            m_pesos -= m_weaponPrices[m_weapon.m_weaponLevel];
+            m_weapon.UpgradeWeapon();
+            return true;
+        }
+
+        return false;
+    }
+
+    /*
+     * INT prefered skin
+     * INT pesos
+     * INT experience
+     * INT weapon level
+     *
+     */
 
     public void SaveState()
     {
         //Send all saved data to a single string s, data separated with | (alt + 124)
         string s = "";
+
         s += "0" + "|";
         s += m_pesos.ToString() + "|";
         s += m_experience.ToString() + "|";
-        s += "0";
+        s += m_weapon.m_weaponLevel.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
     }

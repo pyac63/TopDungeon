@@ -48,15 +48,16 @@ public class CharacterMenu : MonoBehaviour
     //Weapon Upgrade
     public void OnUpgradeClick()
     {
-
+        if (GameManager.m_instance.TryUpgradeWeapon())
+            UpdateMenu();
     }
 
     //Update the character informations
     public void UpdateMenu()
     {
         //Weapon
-        m_WeaponSprite.sprite = GameManager.m_instance.m_weaponSprites[0];
-        m_upgradeCostText.text = "NOT IMPLEMENTED YET";
+        m_WeaponSprite.sprite = GameManager.m_instance.m_weaponSprites[GameManager.m_instance.m_weapon.m_weaponLevel];
+        m_upgradeCostText.text = GameManager.m_instance.m_weaponPrices[GameManager.m_instance.m_weapon.m_weaponLevel.ToString()];
 
         //Meta
         m_levelText.text = "NOT IMPLEMENTED YET";

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Weapon : Collidable
 {
     // Damage structure
-    public int m_damagePoint = 1;
-    public float m_pushForce = 5.0f;
+    public int[] m_damagePoint = {1, 2, 3, 4, 5, 6, 7, 8};
+    public float[] m_pushForce = { 5.0f, 5.2f, 5.4f, 5.6f, 5.8f, 6.0f, 6.5f, 7.0f };
 
     // Upgrade structure
     public int m_weaponLevel = 0;
@@ -49,7 +49,7 @@ public class Weapon : Collidable
             }
 
             //Create a new damage object, then send it to the fighter hit
-            Damage dmg = new Damage { m_damageAmount = m_damagePoint, m_origin = transform.position, m_damagePushForce = m_pushForce };
+            Damage dmg = new Damage { m_damageAmount = m_damagePoint[m_weaponLevel], m_origin = transform.position, m_damagePushForce = m_pushForce[m_weaponLevel] };
 
             collider.SendMessage("ReceiveDamage", dmg);
 
@@ -62,8 +62,11 @@ public class Weapon : Collidable
         m_anim.SetTrigger("Swing");
     }
 
+    public void UpgradeWeapon()
+    {
+        m_weaponLevel++;
+        m_weaponSprite.sprite = GameManager.m_instance.m_weaponSprites[m_weaponLevel];
 
-
-
-
+        //Change the stats
+    }
 }

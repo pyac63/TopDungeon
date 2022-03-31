@@ -263,8 +263,16 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  m_damagePoint: 1
-  m_pushForce: 2
+  m_damagePoint: 0100000002000000030000000400000005000000060000000700000008000000
+  m_pushForce:
+  - 5
+  - 5.2
+  - 5.4
+  - 5.6
+  - 5.8
+  - 6
+  - 6.5
+  - 7
   m_weaponLevel: 0
 --- !u!95 &8561837311629141191
 Animator:
