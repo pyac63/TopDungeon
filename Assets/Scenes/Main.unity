@@ -864,10 +864,10 @@ MonoBehaviour:
   - {fileID: 6213591174740266156, guid: 4b4bc396ad8629340954c4cb4cfaf58e, type: 3}
   - {fileID: -8452988735644794075, guid: 4b4bc396ad8629340954c4cb4cfaf58e, type: 3}
   - {fileID: 1219087599862815547, guid: 4b4bc396ad8629340954c4cb4cfaf58e, type: 3}
-  m_weaponPrices: 64000000c8000000fa0000002c0100005e01000090010000f401000020030000
+  m_weaponPrices: c8000000fa0000002c0100005e01000090010000f401000020030000
   m_xpTable: 
   player: {fileID: 536532668}
-  m_weapon: {fileID: 0}
+  m_weapon: {fileID: 374257265}
   m_floatingTextManager: {fileID: 1191533385}
   m_pesos: 0
   m_experience: 0
@@ -885,6 +885,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &374257265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7066182228630443133, guid: 4c664c9148315eb45951b0c63601054a, type: 3}
+  m_PrefabInstance: {fileID: 7066182227635359679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bea307f10b640b42b6bbf4ae6551571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380986324
 GameObject:
   m_ObjectHideFlags: 0
